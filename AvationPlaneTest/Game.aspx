@@ -5,7 +5,7 @@
     Game goes here</p>
     <p>
         <asp:Label ID="lblFind" runat="server" Text="Find:"></asp:Label>
-    </p>
+    &nbsp;plane control</p>
     <p>
         &nbsp;
         <gridview>

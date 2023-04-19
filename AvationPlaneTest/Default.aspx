@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <p>
-        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="40pt" Text="Avation Plane Test"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="40pt" Text="Aviation Controls Quiz Game Start Screen"></asp:Label>
     </p>
     <p>
         <asp:Button ID="btnStart" runat="server" Text="Start" OnClick="btnStart_Click" />
