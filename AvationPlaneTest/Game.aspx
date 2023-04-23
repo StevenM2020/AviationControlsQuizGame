@@ -8,13 +8,13 @@
         /* Set the page background color */
         image {
             background-size: cover;
-            position: absolute;
-            left: 0;
+            width: 100%;
+            
         }
 
     </style>
 
-        <asp:Panel ID="Image1" runat="server" Height="1080px" Width="1920px" BackImageUrl="~/Background2.png" CssClass="image">
+        <asp:Panel ID="image" runat="server" Height ="1080" BackImageUrl="~/Background2.png" CssClass="image">
 
             <p>
 
