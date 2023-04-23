@@ -59,8 +59,13 @@
             </div>
         </div>
         <div class="container body-content">
+
+                
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <p>
+                </p>
             </asp:ContentPlaceHolder>
+
             <hr />
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - Aviation Controls Quiz Game</p>
