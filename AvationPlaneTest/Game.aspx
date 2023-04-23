@@ -50,6 +50,41 @@
             padding: 100px;
             height: 406px;
         }
+.textPanel {
+  width: 50%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 20px;
+}
+.textPanelQ {
+  width: 75%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 20px;
+}
+/* Set the text label properties */
+.textLabel {
+  font-family: Arial;
+  font-size: 16px;
+  color: white;
+  word-wrap: break-word;
+}
+.divAbtn{
+    display: flex;
+    flex-direction: row;
+}
+
+.right {
+            position: absolute;
+            right: -50px;
+            top: 200px;
+            width: 50%;
+        }
+.divA{
+    padding: 10px;
+}
     </style>
 </head>
 <body>
@@ -60,6 +95,51 @@
             <image id="imageMapBox" src="ImageMapBox.png">
             </image>
         </div> 
+
+        <div class="right">
+        <div class="divA">
+            <asp:Panel ID="pnlQ" runat="server" BackImageUrl="~/Images/PromptBox.png" CssClass="textPanelQ">
+                <asp:Label ID="lblQ" runat="server" CssClass="textLabel" Text="This is some multiline text.askhajksdhkajhsdjkasdjkaksdhakjsdkajhsdklajhsdkahskahsdjkahksdjlhaksjldhajklsdh"></asp:Label>
+                
+            </asp:Panel>
+        </div>
+
+
+         
+        <div class="divA">
+            <div class="divAbtn">
+            <asp:Panel ID="pnlA1" runat="server" BackImageUrl="~/Images/PromptBox.png" CssClass="textPanel">
+                <asp:Label ID="lblA1" runat="server" CssClass="textLabel" Text="This is some multiline text.askhajksdhkajhsdjkasdjkaksdhakjsdkajhsdklajhsdkahskahsdjkahksdjlhaksjldhajklsdh"></asp:Label>
+            </asp:Panel>
+            <asp:imagebutton ID="imgbtnA1" runat="server" ImageUrl="~/Images/ChoiceButtonOff.png" />
+        </div>
+        </div>
+        <div class="divA">
+            <div class="divAbtn">
+            <asp:Panel ID="pnlA2" runat="server" BackImageUrl="~/Images/PromptBox.png" CssClass="textPanel">
+                <asp:Label ID="lblA2" runat="server" CssClass="textLabel" Text="This is some multiline text.askhajksdhkajhsdjkasdjkaksdhakjsdkajhsdklajhsdkahskahsdjkahksdjlhaksjldhajklsdh"></asp:Label>
+            </asp:Panel>
+            <asp:imagebutton ID="imgbtnA2" runat="server" ImageUrl="~/Images/ChoiceButtonOff.png" />
+        </div>
+        </div>
+        <div class="divA">
+            <div class="divAbtn">
+            <asp:Panel ID="pnlA3" runat="server" BackImageUrl="~/Images/PromptBox.png" CssClass="textPanel">
+                <asp:Label ID="lblA3" runat="server" CssClass="textLabel" Text="This is some multiline text.askhajksdhkajhsdjkasdjkaksdhakjsdkajhsdklajhsdkahskahsdjkahksdjlhaksjldhajklsdh"></asp:Label>
+            </asp:Panel>
+            <asp:imagebutton ID="imgbtnA3" runat="server" ImageUrl="~/Images/ChoiceButtonOff.png" />
+        </div>
+        </div>
+        <div class="divA">
+            <div class="divAbtn">
+            <asp:Panel ID="pnlA4" runat="server" BackImageUrl="~/Images/PromptBox.png" CssClass="textPanel">
+                <asp:Label ID="lblA4" runat="server" CssClass="textLabel" Text="This is some multiline text.askhajksdhkajhsdjkasdjkaksdhakjsdkajhsdklajhsdkahskahsdjkahksdjlhaksjldhajklsdh"></asp:Label>
+            </asp:Panel>
+            <asp:imagebutton ID="imgbtnA4" runat="server" ImageUrl="~/Images/ChoiceButtonOff.png" />
+        </div>
+        </div>
+
+
 
     </asp:Panel>
 </body>
