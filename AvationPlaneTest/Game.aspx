@@ -111,7 +111,7 @@
             <asp:Panel ID="pnlA1" runat="server" BackImageUrl="~/Images/PromptBox.png" CssClass="textPanel">
                 <asp:Label ID="lblA1" runat="server" CssClass="textLabel" Text="This is some multiline text.askhajksdhkajhsdjkasdjkaksdhakjsdkajhsdklajhsdkahskahsdjkahksdjlhaksjldhajklsdh"></asp:Label>
             </asp:Panel>
-            <asp:imagebutton ID="imgbtnA1" runat="server" ImageUrl="~/Images/ChoiceButtonOff.png" />
+            <asp:imagebutton ID="imgbtnA1" runat="server" ImageUrl="~/Images/ChoiceButtonOff.png" OnClick="imgbtnA1_Click" />
         </div>
         </div>
         <div class="divA">
@@ -119,7 +119,7 @@
             <asp:Panel ID="pnlA2" runat="server" BackImageUrl="~/Images/PromptBox.png" CssClass="textPanel">
                 <asp:Label ID="lblA2" runat="server" CssClass="textLabel" Text="This is some multiline text.askhajksdhkajhsdjkasdjkaksdhakjsdkajhsdklajhsdkahskahsdjkahksdjlhaksjldhajklsdh"></asp:Label>
             </asp:Panel>
-            <asp:imagebutton ID="imgbtnA2" runat="server" ImageUrl="~/Images/ChoiceButtonOff.png" />
+            <asp:imagebutton ID="imgbtnA2" runat="server" ImageUrl="~/Images/ChoiceButtonOff.png" OnClick="imgbtnA2_Click" />
         </div>
         </div>
         <div class="divA">
@@ -127,7 +127,7 @@
             <asp:Panel ID="pnlA3" runat="server" BackImageUrl="~/Images/PromptBox.png" CssClass="textPanel">
                 <asp:Label ID="lblA3" runat="server" CssClass="textLabel" Text="This is some multiline text.askhajksdhkajhsdjkasdjkaksdhakjsdkajhsdklajhsdkahskahsdjkahksdjlhaksjldhajklsdh"></asp:Label>
             </asp:Panel>
-            <asp:imagebutton ID="imgbtnA3" runat="server" ImageUrl="~/Images/ChoiceButtonOff.png" />
+            <asp:imagebutton ID="imgbtnA3" runat="server" ImageUrl="~/Images/ChoiceButtonOff.png" OnClick="imgbtnA3_Click" />
         </div>
         </div>
         <div class="divA">
@@ -135,8 +135,11 @@
             <asp:Panel ID="pnlA4" runat="server" BackImageUrl="~/Images/PromptBox.png" CssClass="textPanel">
                 <asp:Label ID="lblA4" runat="server" CssClass="textLabel" Text="This is some multiline text.askhajksdhkajhsdjkasdjkaksdhakjsdkajhsdklajhsdkahskahsdjkahksdjlhaksjldhajklsdh"></asp:Label>
             </asp:Panel>
-            <asp:imagebutton ID="imgbtnA4" runat="server" ImageUrl="~/Images/ChoiceButtonOff.png" />
+            <asp:imagebutton ID="imgbtnA4" runat="server" ImageUrl="~/Images/ChoiceButtonOff.png" OnClick="imgbtnA4_Click" />
         </div>
+
+        <asp:imagebutton ID="imgbtnSubmit" runat="server" ImageUrl="~/Images/Submit.png" />
+
         </div>
 
 
