@@ -138,7 +138,7 @@
             <asp:imagebutton ID="imgbtnA4" runat="server" ImageUrl="~/Images/ChoiceButtonOff.png" OnClick="imgbtnA4_Click" />
         </div>
 
-        <asp:imagebutton ID="imgbtnSubmit" runat="server" ImageUrl="~/Images/Submit.png" />
+        <asp:imagebutton ID="imgbtnSubmit" runat="server" ImageUrl="~/Images/Submit.png" OnClick="imgbtnSubmit_Click" />
 
         </div>
 
