@@ -17,7 +17,7 @@
 
     </style>
     
-     <asp:Panel ID="image" runat="server" BackImageUrl="~/Background2.png" CssClass="image">
+     <asp:Panel ID="image" runat="server" Height="1080" Width ="100%" BackImageUrl="~/Background2.png" CssClass="image">
     <p>
         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="40pt" Text="Aviation Controls Quiz Game Start Screen"></asp:Label>
     </p>
