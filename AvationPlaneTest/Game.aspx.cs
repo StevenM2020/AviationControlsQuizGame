@@ -23,12 +23,91 @@ namespace AvationPlaneTest
         Random random = new Random();
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (ViewState["loaded"] == "true")
+            lblConsole.Text = "Console:";
+            if (ViewState["loaded"] != null)
             {
                 return;
             }
             ViewState["loaded"] = "true";
+            ViewState["intCorrectButton"] = 0;
+            ViewState["intButtonSelected"] = 0;
+            ViewState["intPoints"] = 0;
+            ViewState["intCurrentQuestionCounter"] = 0;
+            setQuestions();
+        }
+
+        protected void imgbtnA1_Click(object sender, ImageClickEventArgs e)
+        {
+            if (ViewState["GameOver"] != null)
+                return;
+            deselectButtons();
+            imgbtnA1.ImageUrl = "~/Images/ChoiceButtonOn.png";
+            ViewState["intButtonSelected"] = 1;
+        }
+
+        protected void imgbtnA2_Click(object sender, ImageClickEventArgs e)
+        {
+            if (ViewState["GameOver"] != null)
+                return;
+            deselectButtons();
+            imgbtnA2.ImageUrl = "~/Images/ChoiceButtonOn.png";
+            ViewState["intButtonSelected"] = 2;
+        }
+
+        protected void imgbtnA3_Click(object sender, ImageClickEventArgs e)
+        {if (ViewState["GameOver"] != null)
+                return;
+            deselectButtons();
+            imgbtnA3.ImageUrl = "~/Images/ChoiceButtonOn.png";
+            ViewState["intButtonSelected"] = 3;
+        }
+
+        protected void imgbtnA4_Click(object sender, ImageClickEventArgs e)
+        {if (ViewState["GameOver"] != null)
+                return;
+            deselectButtons();
+            imgbtnA4.ImageUrl = "~/Images/ChoiceButtonOn.png";
+            ViewState["intButtonSelected"] = 4;
+        }
+
+        // changes the buttons image to disable and sets the selection var to 0
+        private void deselectButtons()
+        {
+            imgbtnA1.ImageUrl = "~/Images/ChoiceButtonOff.png";
+            imgbtnA2.ImageUrl = "~/Images/ChoiceButtonOff.png";
+            imgbtnA3.ImageUrl = "~/Images/ChoiceButtonOff.png";
+            imgbtnA4.ImageUrl = "~/Images/ChoiceButtonOff.png";
+            ViewState["intButtonSelected"] = 0;
+        }
+
+        protected void imgbtnSubmit_Click(object sender, ImageClickEventArgs e)
+        {
+            if (ViewState["GameOver"] != null)
+                return;
+            //lblQ.Text = ViewState["intButtonSelected"].ToString() + ViewState["intCorrectButton"];
+            if (ViewState["intButtonSelected"].ToString() == ViewState["intCorrectButton"].ToString())
+            {
+                lblQ.Text = "you did the thing";
+                ViewState["intPoints"] = (int)ViewState["intPoints"] + 1;
+            }
+            deselectButtons();
+            if((int)ViewState["intCurrentQuestionCounter"] >= intTotalQuestions)
+            {
+                ViewState["GameOver"] = "true";
+
+                // end game and show results here
+
+                lblConsole.Text = lblConsole.Text + " game over, " + ViewState["intPoints"].ToString() + " points";
+            }
+            else
+            {
+                //next question
+                setQuestions();
+            }
+        }
+
+        private void setQuestions()
+        {
             lblListA = new List<Label>
             {
                 lblA1,
@@ -37,13 +116,17 @@ namespace AvationPlaneTest
                 lblA4
             };
 
+            // reads the question file
             string json = File.ReadAllText("D:\\ForkSource\\AviationControlsQuizGame\\AvationPlaneTest\\questions.json");
 
+            // sets the options when converting the json
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true,
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             };
+
+            // string to object
             questions = System.Text.Json.JsonSerializer.Deserialize<List<Questions>>(json, options);
 
             intCurrentQuestion = random.Next(6);
@@ -74,60 +157,15 @@ namespace AvationPlaneTest
             {
                 // what button is the correct answer
                 if (intCurrentQuestion == hashValues[i])
-                    intCorrectButton = num;
-                lblListA[num].Text = questions[hashValues[i++]].strQuestion;
+                    ViewState["intCorrectButton"] = num + 1;
+                lblListA[num].Text = questions[hashValues[i++]].strAnswer;
             }
+            ViewState["intCurrentQuestionCounter"] = (int)ViewState["intCurrentQuestionCounter"] + 1;
 
-
-        }
-
-        protected void imgbtnA1_Click(object sender, ImageClickEventArgs e)
-        {
-            deselectButtons();
-            imgbtnA1.ImageUrl = "~/Images/ChoiceButtonOn.png";
-            intButtonSelected = 1;
-        }
-
-        protected void imgbtnA2_Click(object sender, ImageClickEventArgs e)
-        {
-            deselectButtons();
-            imgbtnA2.ImageUrl = "~/Images/ChoiceButtonOn.png";
-            intButtonSelected = 2;
-        }
-
-        protected void imgbtnA3_Click(object sender, ImageClickEventArgs e)
-        {
-            deselectButtons();
-            imgbtnA3.ImageUrl = "~/Images/ChoiceButtonOn.png";
-            intButtonSelected = 3;
-        }
-
-        protected void imgbtnA4_Click(object sender, ImageClickEventArgs e)
-        {
-            deselectButtons();
-            imgbtnA4.ImageUrl = "~/Images/ChoiceButtonOn.png";
-            intButtonSelected = 4;
-        }
-
-        // changes the buttons image to disable and sets the selection var to 0
-        private void deselectButtons()
-        {
-            imgbtnA1.ImageUrl = "~/Images/ChoiceButtonOff.png";
-            imgbtnA2.ImageUrl = "~/Images/ChoiceButtonOff.png";
-            imgbtnA3.ImageUrl = "~/Images/ChoiceButtonOff.png";
-            imgbtnA4.ImageUrl = "~/Images/ChoiceButtonOff.png";
-            intButtonSelected = 0;
-        }
-
-        protected void imgbtnSubmit_Click(object sender, ImageClickEventArgs e)
-        {
-            if(intButtonSelected == intCorrectButton)
-            {
-                lblQ.Text = "you did the thing";
-            }
         }
     }
 
+    // structure to store questions and answers
     public class Questions
     {
         public string strQuestion { get; set; }
