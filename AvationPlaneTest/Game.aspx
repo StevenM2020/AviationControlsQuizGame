@@ -6,7 +6,7 @@
     
     <style>
         /* Set the page background color */
-        image {
+        #image {
             background-size: cover;
             width: 100%;
             

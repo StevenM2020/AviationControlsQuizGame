@@ -15,6 +15,15 @@ namespace AvationPlaneTest
     {
 
         /// <summary>
+        /// image control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel image;
+
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -24,12 +33,12 @@ namespace AvationPlaneTest
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// btnStart control.
+        /// ImageButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnStart;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
     }
 }
