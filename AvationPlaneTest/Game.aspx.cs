@@ -117,7 +117,7 @@ namespace AvationPlaneTest
             };
 
             // reads the question file
-            string json = File.ReadAllText("D:\\ForkSource\\AviationControlsQuizGame\\AvationPlaneTest\\questions.json");
+            string json = File.ReadAllText(Server.MapPath(@"~/questions.json"));
 
             // sets the options when converting the json
             var options = new JsonSerializerOptions

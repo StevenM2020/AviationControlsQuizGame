@@ -67,11 +67,11 @@
             </asp:ContentPlaceHolder>
 
             <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Aviation Controls Quiz Game</p>
-            </footer>
         </div>
 
     </form>
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Aviation Controls Quiz Game</p>
+            </footer>
 </body>
 </html>
