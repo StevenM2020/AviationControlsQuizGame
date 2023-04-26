@@ -91,9 +91,64 @@
     <asp:Panel ID="image" runat="server" Height="1080" BackImageUrl="~/Background2.png" CssClass="image">
 
         <div id="content">
-            <asp:ImageMap ID="imageMapImage" runat="server" ImageUrl="~/Control1.png"  CssClass="imageMapImage" Height="700px" Width="550px"></asp:ImageMap>
-            <image id="imageMapBox" src="ImageMapBox.png">
-            </image>
+            <!--image id="imageMapBox" src="ImageMapBox.png"-->
+
+                <asp:ImageMap 
+                ID="imageMapImage" 
+                runat="server" 
+                ImageUrl="~/Control1.png"  
+                CssClass="imageMapImage" 
+                Height="700px" 
+                Width="550px" 
+                OnClick="saveButtonPress">
+
+                <asp:RectangleHotSpot          
+                    top="59"
+                    left="364"
+                    bottom="92"
+                    right="405"
+                    hotspotmode="PostBack"
+                    postbackvalue="0">
+                </asp:RectangleHotSpot> 
+
+                <asp:RectangleHotSpot          
+                    top="44"
+                    left="63"
+                    bottom="106"
+                    right="110"
+                    hotspotmode="PostBack"
+                    postbackvalue="1">
+                </asp:RectangleHotSpot> 
+
+                <asp:RectangleHotSpot          
+                    top="256"
+                    left="245"
+                    bottom="309"
+                    right="296"
+                    hotspotmode="PostBack"
+                    postbackvalue="2">
+                </asp:RectangleHotSpot> 
+
+                <asp:RectangleHotSpot          
+                    top="158"
+                    left="424"
+                    bottom="216"
+                    right="535"
+                    hotspotmode="PostBack"
+                    postbackvalue="3">
+                </asp:RectangleHotSpot> 
+
+                <asp:RectangleHotSpot          
+                    top="220"
+                    left="422"
+                    bottom="268"
+                    right="533"
+                    hotspotmode="PostBack"
+                    postbackvalue="4">
+                </asp:RectangleHotSpot> 
+
+            </asp:ImageMap>            
+            </!--image>
         </div> 
 
         <div class="right">
