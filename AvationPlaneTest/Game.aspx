@@ -82,6 +82,16 @@
             top: 200px;
             width: 50%;
         }
+.bottomRight {
+            position: absolute;
+            bottom: -30px;
+            left: 475px;
+        }
+.bottomLeft {
+            position: absolute;
+            bottom: -30px;
+            left: 150px;
+        }
 .divA{
     padding: 10px;
 }
@@ -150,6 +160,14 @@
             </asp:ImageMap>            
             </!--image>
         </div> 
+
+        <div class="bottomRight">
+            <asp:Button ID="Button1" runat="server" Text="Overhead Panel" />
+        </div>
+
+        <div class="bottomLeft">
+            <asp:Button ID="Button2" runat="server" Text="Second Officer Panel" />
+        </div>
 
         <div class="right">
         <div class="divA">
