@@ -15,21 +15,39 @@ namespace AvationPlaneTest
     {
 
         /// <summary>
-        /// Label1 control.
+        /// image control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Panel image;
 
         /// <summary>
-        /// btnStart control.
+        /// pnlQ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnStart;
+        protected global::System.Web.UI.WebControls.Panel pnlQ;
+
+        /// <summary>
+        /// lblQ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQ;
+
+        /// <summary>
+        /// imgbtnA2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgbtnA2;
     }
 }

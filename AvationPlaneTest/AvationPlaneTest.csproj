@@ -158,6 +158,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Images\Main_Menu_button.png" />
+    <Content Include="Images\StartButton.png" />
     <Content Include="questions.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="ImageMapBox.png" />
