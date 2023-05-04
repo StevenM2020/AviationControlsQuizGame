@@ -109,6 +109,13 @@ namespace AvationPlaneTest
             }
         }
 
+        //checks if the selected hotspot on the image map is the correct answer
+        protected void saveButtonPress(Object sender, ImageMapEventArgs e)
+        {
+            ViewState["currentButton"] = e.PostBackValue;
+            lblConsole.Text = "works";
+        }
+
         private void setQuestions()
         {
             lblListA = new List<Label>
