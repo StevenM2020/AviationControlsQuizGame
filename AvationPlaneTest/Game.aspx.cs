@@ -119,10 +119,59 @@ namespace AvationPlaneTest
 
 
         //stores the postbackvalue of the hotspots
+        //sets the imagemap image to one that provides suer feedback
         protected void saveButtonPress(Object sender, ImageMapEventArgs e)
         {
+            //postback value from the clicked hotspot
             ViewState["currentHotspot"] = e.PostBackValue;
-            lblConsole.Text = "works"; 
+
+            //array that has the urls for the user feedback images
+            String[] feedbackImages = new String[] { 
+                "~/Images/Panel1(FireTestSwitch).png",
+                "~/Images/Panel1(HydraulicPowerSpoilierSwitch).png",
+                "~/Images/Panel1(WindshieldWiper).png",
+                "~/Images/Panel1(PivotKnobs).png",
+                "~/Images/Panel1(ProbeHeaterSwitchs).png",
+                "~/Images/Panel2(CargoHeatOutflow).png",
+                "~/Images/Panel2(AcGeneratorDrivePanel).png",
+                "~/Images/Panel2(GridInetrconnectSwitch).png",
+                "~/Images/Panel2(ServiceInterphoneSwitch).png",
+                "~/Images/Panel2(BatterySwitch).png"};
+
+            //switch statement that checks for each possible value of ViewState["currentHotspot"] and sets the correct feedback image
+            switch(ViewState["currentHotspot"])
+            {
+                case "0":
+                    imageMapImage1.ImageUrl = feedbackImages[0];
+                    break; 
+                case "1":
+                    imageMapImage1.ImageUrl = feedbackImages[1];
+                    break;
+                case "2":
+                    imageMapImage1.ImageUrl = feedbackImages[2];
+                    break;
+                case "3":
+                    imageMapImage1.ImageUrl = feedbackImages[3];
+                    break;
+                case "4":
+                    imageMapImage1.ImageUrl = feedbackImages[4];
+                    break;
+                case "5":
+                    imageMapImage2.ImageUrl = feedbackImages[5];
+                    break;
+                case "6":
+                    imageMapImage2.ImageUrl = feedbackImages[6];
+                    break;
+                case "7":
+                    imageMapImage2.ImageUrl = feedbackImages[7];
+                    break;
+                case "8":
+                    imageMapImage2.ImageUrl = feedbackImages[8];
+                    break;
+                case "9":
+                    imageMapImage2.ImageUrl = feedbackImages[9];
+                    break;
+            }
         }
 
         //enables the overhead panel imagemap
@@ -130,8 +179,6 @@ namespace AvationPlaneTest
         {
             content.Style.Add("display", "all");//enables overhead panel imagemap
             content2.Style.Add("display", "none");//disables second officer imagemap
-            overheadButton.ImageUrl = "~/Images/ChoiceButtonOn.png";//sets button to active
-            secondOfficerButton.ImageUrl = "~/Images/ChoiceButtonOff.png";//sets button to inactive
         }
 
         //enables the second officer imagemap
@@ -139,8 +186,6 @@ namespace AvationPlaneTest
         {
             content.Style.Add("display", "none");//disables overhead panel imagemap
             content2.Style.Add("display", "all");//enables second officer imagemap
-            overheadButton.ImageUrl = "~/Images/ChoiceButtonOff.png";//sets button to inactive
-            secondOfficerButton.ImageUrl = "~/Images/ChoiceButtonOn.png";//sets button to active
         }
 
         private void setQuestions()

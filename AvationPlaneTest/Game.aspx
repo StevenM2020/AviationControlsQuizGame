@@ -90,7 +90,7 @@
 .bottomRight {
             position: absolute;
             bottom: -30px;
-            left:675px;
+            left:625px;
         }
 .bottomLeft {
             position: absolute;
@@ -180,7 +180,7 @@
                     bottom="90"
                     right="606"
                     hotspotmode="PostBack"
-                    postbackvalue="5">
+                    postbackvalue= "5">
                 </asp:RectangleHotSpot> 
 
                 <asp:RectangleHotSpot          
@@ -223,11 +223,11 @@
         </div>
 
         <div class="bottomRight">
-            <asp:imagebutton ID="overheadButton" runat="server" ImageUrl="~/Images/ChoiceButtonOn.png" OnClick= "changeToOverhead"/>
+            <asp:imagebutton ID="overheadButton" runat="server" ImageUrl="~/Images/PanelButtonsRot.png" OnClick= "changeToOverhead"/>
         </div>
 
         <div class="bottomLeft">
-            <asp:imagebutton ID="secondOfficerButton" runat="server" ImageUrl="~/Images/ChoiceButtonOff.png" OnClick= "changeToOfficer"/>
+            <asp:imagebutton ID="secondOfficerButton" runat="server" ImageUrl="~/Images/PanelButtonsSep.png" OnClick= "changeToOfficer"/>
         </div>
 
         <div class="right">
