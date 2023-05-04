@@ -24,31 +24,58 @@ namespace AvationPlaneTest
         protected global::System.Web.UI.WebControls.Panel image;
 
         /// <summary>
-        /// imageMapImage control.
+        /// content control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageMap imageMapImage;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl content;
 
         /// <summary>
-        /// Button1 control.
+        /// imageMapImage1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.ImageMap imageMapImage1;
 
         /// <summary>
-        /// Button2 control.
+        /// content2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl content2;
+
+        /// <summary>
+        /// imageMapImage2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageMap imageMapImage2;
+
+        /// <summary>
+        /// overheadButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton overheadButton;
+
+        /// <summary>
+        /// secondOfficerButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton secondOfficerButton;
 
         /// <summary>
         /// pnlQ control.

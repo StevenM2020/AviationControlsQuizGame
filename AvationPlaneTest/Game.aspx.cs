@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace AvationPlaneTest
@@ -14,13 +15,13 @@ namespace AvationPlaneTest
     {
         private int intButtonSelected;
         private int intTotalQuestions = 3;
-        private int intCurrentQuestion;
         private int intCurrentQuestionCounter = 0;
         private int intCorrectButton;
         private int intnumCorrect =0;
         List<Questions> questions;
         List<Label> lblListA;
         Random random = new Random();
+        HtmlGenericControl contentDiv = new HtmlGenericControl();
         protected void Page_Load(object sender, EventArgs e)
         {
             lblConsole.Text = "Console:";
@@ -33,6 +34,12 @@ namespace AvationPlaneTest
             ViewState["intButtonSelected"] = 0;
             ViewState["intPoints"] = 0;
             ViewState["intCurrentQuestionCounter"] = 0;
+            ViewState["currentHotspot"] = 0;
+            ViewState["currentQuestion"] = 0;
+
+           //disables the second image map so that way only the first one is one the screen
+           content2.Style.Add("display", "none");
+
             setQuestions();
         }
 
@@ -85,7 +92,8 @@ namespace AvationPlaneTest
             if (ViewState["GameOver"] != null)
                 return;
             //lblQ.Text = ViewState["intButtonSelected"].ToString() + ViewState["intCorrectButton"];
-            if (ViewState["intButtonSelected"].ToString() == ViewState["intCorrectButton"].ToString())
+            if (ViewState["intButtonSelected"].ToString() == ViewState["intCorrectButton"].ToString() &&
+                ViewState["currentQuestion"].ToString() == ViewState["currentHotspot"].ToString())
             {
                 lblQ.Text = "you did the thing";
                 ViewState["intPoints"] = (int)ViewState["intPoints"] + 1;
@@ -109,11 +117,75 @@ namespace AvationPlaneTest
             }
         }
 
-        //checks if the selected hotspot on the image map is the correct answer
+
+        //stores the postbackvalue of the hotspots
+        //sets the imagemap image to one that provides suer feedback
         protected void saveButtonPress(Object sender, ImageMapEventArgs e)
         {
-            ViewState["currentButton"] = e.PostBackValue;
-            lblConsole.Text = "works";
+            //postback value from the clicked hotspot
+            ViewState["currentHotspot"] = e.PostBackValue;
+
+            //array that has the urls for the user feedback images
+            String[] feedbackImages = new String[] { 
+                "~/Images/Panel1(FireTestSwitch).png",
+                "~/Images/Panel1(HydraulicPowerSpoilierSwitch).png",
+                "~/Images/Panel1(WindshieldWiper).png",
+                "~/Images/Panel1(PivotKnobs).png",
+                "~/Images/Panel1(ProbeHeaterSwitchs).png",
+                "~/Images/Panel2(CargoHeatOutflow).png",
+                "~/Images/Panel2(AcGeneratorDrivePanel).png",
+                "~/Images/Panel2(GridInetrconnectSwitch).png",
+                "~/Images/Panel2(ServiceInterphoneSwitch).png",
+                "~/Images/Panel2(BatterySwitch).png"};
+
+            //switch statement that checks for each possible value of ViewState["currentHotspot"] and sets the correct feedback image
+            switch(ViewState["currentHotspot"])
+            {
+                case "0":
+                    imageMapImage1.ImageUrl = feedbackImages[0];
+                    break; 
+                case "1":
+                    imageMapImage1.ImageUrl = feedbackImages[1];
+                    break;
+                case "2":
+                    imageMapImage1.ImageUrl = feedbackImages[2];
+                    break;
+                case "3":
+                    imageMapImage1.ImageUrl = feedbackImages[3];
+                    break;
+                case "4":
+                    imageMapImage1.ImageUrl = feedbackImages[4];
+                    break;
+                case "5":
+                    imageMapImage2.ImageUrl = feedbackImages[5];
+                    break;
+                case "6":
+                    imageMapImage2.ImageUrl = feedbackImages[6];
+                    break;
+                case "7":
+                    imageMapImage2.ImageUrl = feedbackImages[7];
+                    break;
+                case "8":
+                    imageMapImage2.ImageUrl = feedbackImages[8];
+                    break;
+                case "9":
+                    imageMapImage2.ImageUrl = feedbackImages[9];
+                    break;
+            }
+        }
+
+        //enables the overhead panel imagemap
+        protected void changeToOverhead(object sender, ImageClickEventArgs e)
+        {
+            content.Style.Add("display", "all");//enables overhead panel imagemap
+            content2.Style.Add("display", "none");//disables second officer imagemap
+        }
+
+        //enables the second officer imagemap
+        protected void changeToOfficer(object sender, ImageClickEventArgs e)
+        {
+            content.Style.Add("display", "none");//disables overhead panel imagemap
+            content2.Style.Add("display", "all");//enables second officer imagemap
         }
 
         private void setQuestions()
@@ -139,7 +211,9 @@ namespace AvationPlaneTest
             // string to object
             questions = System.Text.Json.JsonSerializer.Deserialize<List<Questions>>(json, options);
 
-            intCurrentQuestion = random.Next(6);
+            int intCurrentQuestion = random.Next(10);
+
+            ViewState["currentQuestion"] = intCurrentQuestion;
 
             lblQ.Text = questions[intCurrentQuestion].strQuestion;
 
@@ -173,6 +247,7 @@ namespace AvationPlaneTest
             ViewState["intCurrentQuestionCounter"] = (int)ViewState["intCurrentQuestionCounter"] + 1;
 
         }
+
     }
 
     // structure to store questions and answers

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Game.aspx.cs" Inherits="AvationPlaneTest.Game" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
 
 <head>
     <title>Game</title>
@@ -9,6 +9,12 @@
 
         /* Center the content on the page */
         #content {
+            margin: 0 auto;
+           
+            padding: 100px;
+            height: 406px;
+        }
+        #content2 {
             margin: 0 auto;
            
             padding: 100px;
@@ -36,14 +42,13 @@
             background-repeat: no-repeat;
             background-size: 100% 100%;
             position: relative;
-            top: 0px;
-            left: -560px;
-
         }
-        #imageMapImage {
-            background-image: url(~/Control1.png);
+        .imageMapImage1 {
             background-repeat: no-repeat;
             background-size: 100% 100%;
+            top: 100px;
+            left: 175px;
+            position: relative;
         }
         #imageb {
             margin: 0 auto;
@@ -85,7 +90,7 @@
 .bottomRight {
             position: absolute;
             bottom: -30px;
-            left: 475px;
+            left:625px;
         }
 .bottomLeft {
             position: absolute;
@@ -99,15 +104,14 @@
 </head>
 <body>
     <asp:Panel ID="image" runat="server" Height="1080" BackImageUrl="~/Background2.png" CssClass="image">
-
-        <div id="content">
-            <!--image id="imageMapBox" src="ImageMapBox.png"-->
+        
+        <div id="content"  runat="server">
 
                 <asp:ImageMap 
-                ID="imageMapImage" 
+                ID="imageMapImage1" 
                 runat="server" 
                 ImageUrl="~/Control1.png"  
-                CssClass="imageMapImage" 
+                CssClass="imageMapImage1" 
                 Height="700px" 
                 Width="550px" 
                 OnClick="saveButtonPress">
@@ -157,16 +161,73 @@
                     postbackvalue="4">
                 </asp:RectangleHotSpot> 
 
-            </asp:ImageMap>            
-            </!--image>
+            </asp:ImageMap>     
         </div> 
 
+        <div id="content2"  runat="server">
+            <asp:ImageMap 
+                ID="imageMapImage2" 
+                runat="server" 
+                ImageUrl="~/Control2.png"  
+                CssClass="imageMapImage1" 
+                Height="700px" 
+                Width="550px" 
+                OnClick="saveButtonPress">
+
+                <asp:RectangleHotSpot          
+                    top="25"
+                    left="373"
+                    bottom="90"
+                    right="606"
+                    hotspotmode="PostBack"
+                    postbackvalue= "5">
+                </asp:RectangleHotSpot> 
+
+                <asp:RectangleHotSpot          
+                    top="68"
+                    left="1"
+                    bottom="149"
+                    right="148"
+                    hotspotmode="PostBack"
+                    postbackvalue="6">
+                </asp:RectangleHotSpot> 
+
+                <asp:RectangleHotSpot          
+                    top="619"
+                    left="264"
+                    bottom="641"
+                    right="298"
+                    hotspotmode="PostBack"
+                    postbackvalue="7">
+                </asp:RectangleHotSpot> 
+
+                <asp:RectangleHotSpot          
+                    top="617"
+                    left="463"
+                    bottom="659"
+                    right="508"
+                    hotspotmode="PostBack"
+                    postbackvalue="8">
+                </asp:RectangleHotSpot> 
+
+                <asp:RectangleHotSpot          
+                    top="330"
+                    left="227"
+                    bottom="361"
+                    right="258"
+                    hotspotmode="PostBack"
+                    postbackvalue="9">
+                </asp:RectangleHotSpot> 
+
+            </asp:ImageMap>     
+        </div>
+
         <div class="bottomRight">
-            <asp:Button ID="Button1" runat="server" Text="Overhead Panel" />
+            <asp:imagebutton ID="overheadButton" runat="server" ImageUrl="~/Images/PanelButtonsRot.png" OnClick= "changeToOverhead"/>
         </div>
 
         <div class="bottomLeft">
-            <asp:Button ID="Button2" runat="server" Text="Second Officer Panel" />
+            <asp:imagebutton ID="secondOfficerButton" runat="server" ImageUrl="~/Images/PanelButtonsSep.png" OnClick= "changeToOfficer"/>
         </div>
 
         <div class="right">
@@ -223,7 +284,7 @@
         </div>
 
         </div>
-
+            </div>
 
 
     </asp:Panel>

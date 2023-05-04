@@ -26,7 +26,8 @@ namespace AvationPlaneTest
             // shows how many questions and how many points they got right
             lblPoints.Text = "You got " + intPoints.ToString() + " out of " + intQuestions.ToString() + " total points.";
             // shows what percent they got right and checks for /0
-            lblScore.Text = "Score: " + (intQuestions == 0 ? "No Questions":( (intPoints/intQuestions).ToString() + "%"));
+            
+            lblScore.Text = "Score: " + (intQuestions == 0 ? "No Questions":( ((int)((float)intPoints/(float)intQuestions*100)).ToString() + "%"));
         }
         protected void btnMM(object sender, EventArgs e)
         {
