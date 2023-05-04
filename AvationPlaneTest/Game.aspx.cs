@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace AvationPlaneTest
@@ -21,6 +22,7 @@ namespace AvationPlaneTest
         List<Questions> questions;
         List<Label> lblListA;
         Random random = new Random();
+        HtmlGenericControl contentDiv = new HtmlGenericControl();
         protected void Page_Load(object sender, EventArgs e)
         {
             lblConsole.Text = "Console:";
@@ -33,6 +35,7 @@ namespace AvationPlaneTest
             ViewState["intButtonSelected"] = 0;
             ViewState["intPoints"] = 0;
             ViewState["intCurrentQuestionCounter"] = 0;
+            content2.Style.Add("display", "none");
             setQuestions();
         }
 
@@ -106,11 +109,30 @@ namespace AvationPlaneTest
             }
         }
 
+
         //checks if the selected hotspot on the image map is the correct answer
         protected void saveButtonPress(Object sender, ImageMapEventArgs e)
         {
             ViewState["currentButton"] = e.PostBackValue;
             lblConsole.Text = "works";
+        }
+
+        //enables the overhead panel imagemap
+        protected void changeToOverhead(object sender, ImageClickEventArgs e)
+        {
+            content.Style.Add("display", "all");
+            content2.Style.Add("display", "none");
+            overheadButton.ImageUrl = "~/Images/ChoiceButtonOn.png";
+            secondOfficerButton.ImageUrl = "~/Images/ChoiceButtonOff.png";
+        }
+
+        //enables the second officer imagemap
+        protected void changeToOfficer(object sender, ImageClickEventArgs e)
+        {
+           content.Style.Add("display", "none");
+            content2.Style.Add("display", "all");
+            overheadButton.ImageUrl = "~/Images/ChoiceButtonOff.png";
+            secondOfficerButton.ImageUrl = "~/Images/ChoiceButtonOn.png";
         }
 
         private void setQuestions()
@@ -170,6 +192,7 @@ namespace AvationPlaneTest
             ViewState["intCurrentQuestionCounter"] = (int)ViewState["intCurrentQuestionCounter"] + 1;
 
         }
+
     }
 
     // structure to store questions and answers
