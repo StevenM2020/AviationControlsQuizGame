@@ -1,5 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Game.aspx.cs" Inherits="AvationPlaneTest.Game" %>
-
+﻿<%-- Script:    Game Design 
+     Authors:   Steven, Hunter 
+     Date:      5/4/2023 --%> 
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Game.aspx.cs" Inherits="AvationPlaneTest.Game" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
 

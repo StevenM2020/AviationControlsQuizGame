@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Script:   Start
+//Author:   Ethan
+//Date:     5/4/2023
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +16,7 @@ namespace AvationPlaneTest
         {
 
         }
-
+        // send player to game
         protected void btnStart_Click(object sender, EventArgs e)
         {
             Response.Redirect("Game.aspx");

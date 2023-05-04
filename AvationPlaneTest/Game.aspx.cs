@@ -1,4 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿//Script:   Game
+//Authors:  Steven, Hunter
+//Date:     5/4/2023
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,11 +16,7 @@ namespace AvationPlaneTest
 {
     public partial class Game : System.Web.UI.Page
     {
-        private int intButtonSelected;
         private int intTotalQuestions = 3;
-        private int intCurrentQuestionCounter = 0;
-        private int intCorrectButton;
-        private int intnumCorrect =0;
         List<Questions> questions;
         List<Label> lblListA;
         Random random = new Random();
@@ -37,12 +36,13 @@ namespace AvationPlaneTest
             ViewState["currentHotspot"] = 0;
             ViewState["currentQuestion"] = 0;
 
-           //disables the second image map so that way only the first one is one the screen
-           content2.Style.Add("display", "none");
+            //disables the second image map so that way only the first one is one the screen
+            content2.Style.Add("display", "none");
 
             setQuestions();
         }
 
+        #region lights up buttons and assigns selected value when player presses button
         protected void imgbtnA1_Click(object sender, ImageClickEventArgs e)
         {
             if (ViewState["GameOver"] != null)
@@ -62,7 +62,8 @@ namespace AvationPlaneTest
         }
 
         protected void imgbtnA3_Click(object sender, ImageClickEventArgs e)
-        {if (ViewState["GameOver"] != null)
+        {
+            if (ViewState["GameOver"] != null)
                 return;
             deselectButtons();
             imgbtnA3.ImageUrl = "~/Images/ChoiceButtonOn.png";
@@ -70,12 +71,14 @@ namespace AvationPlaneTest
         }
 
         protected void imgbtnA4_Click(object sender, ImageClickEventArgs e)
-        {if (ViewState["GameOver"] != null)
+        {
+            if (ViewState["GameOver"] != null)
                 return;
             deselectButtons();
             imgbtnA4.ImageUrl = "~/Images/ChoiceButtonOn.png";
             ViewState["intButtonSelected"] = 4;
         }
+        #endregion
 
         // changes the buttons image to disable and sets the selection var to 0
         private void deselectButtons()
@@ -91,7 +94,7 @@ namespace AvationPlaneTest
         {
             if (ViewState["GameOver"] != null)
                 return;
-            //lblQ.Text = ViewState["intButtonSelected"].ToString() + ViewState["intCorrectButton"];
+            // give point if correct
             if (ViewState["intButtonSelected"].ToString() == ViewState["intCorrectButton"].ToString() &&
                 ViewState["currentQuestion"].ToString() == ViewState["currentHotspot"].ToString())
             {
@@ -99,7 +102,7 @@ namespace AvationPlaneTest
                 ViewState["intPoints"] = (int)ViewState["intPoints"] + 1;
             }
             deselectButtons();
-            if((int)ViewState["intCurrentQuestionCounter"] >= intTotalQuestions)
+            if ((int)ViewState["intCurrentQuestionCounter"] >= intTotalQuestions)
             {
                 ViewState["GameOver"] = "true";
 
@@ -126,7 +129,7 @@ namespace AvationPlaneTest
             ViewState["currentHotspot"] = e.PostBackValue;
 
             //array that has the urls for the user feedback images
-            String[] feedbackImages = new String[] { 
+            String[] feedbackImages = new String[] {
                 "~/Images/Panel1(FireTestSwitch).png",
                 "~/Images/Panel1(HydraulicPowerSpoilierSwitch).png",
                 "~/Images/Panel1(WindshieldWiper).png",
@@ -139,11 +142,11 @@ namespace AvationPlaneTest
                 "~/Images/Panel2(BatterySwitch).png"};
 
             //switch statement that checks for each possible value of ViewState["currentHotspot"] and sets the correct feedback image
-            switch(ViewState["currentHotspot"])
+            switch (ViewState["currentHotspot"])
             {
                 case "0":
                     imageMapImage1.ImageUrl = feedbackImages[0];
-                    break; 
+                    break;
                 case "1":
                     imageMapImage1.ImageUrl = feedbackImages[1];
                     break;

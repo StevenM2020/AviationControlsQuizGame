@@ -51,51 +51,32 @@ Inherits="AvationPlaneTest.Devs" %>
       <p style="margin-left: 60px">
         <b>Ethan</b>
       </p>
-      <a
-        href="https://www.linkedin.com/in/ethan-lehutsky-332b301b9"
-        class="link"
-        >LinkedIn</a
-      >
+      <a href="https://www.linkedin.com/in/ethan-lehutsky-332b301b9"class="link">LinkedIn</a>
       <p></p>
       <p style="margin-left: 60px">
         <b>Andy</b>
       </p>
       <a href="https://ajj12.myportfolio.com" class="link">Portfolio</a>
       <p></p>
-      <a
-        href="https://www.linkedin.com/in/andrew-jackowski-0510241a7/"
-        class="link"
-        >LinkedIn</a
-      >
+      <a href="https://www.linkedin.com/in/andrew-jackowski-0510241a7/"class="link">LinkedIn</a>
       <p></p>
       <p style="margin-left: 60px">
         <b>David</b>
       </p>
-      <a href="https://www.linkedin.com/in/david-waldron-021a951b5" class="link"
-        >LinkedIn</a
-      >
+      <a href="https://www.linkedin.com/in/david-waldron-021a951b5" class="link">LinkedIn</a>
       <p></p>
       <p style="margin-left: 60px">
         <b>Steven</b>
         <p></p>
-        <a href="https://stevenmotz.myportfolio.com/work" class="link"
-          >Portfolio</a
-        >
+        <a href="https://stevenmotz.myportfolio.com/work" class="link">Portfolio</a>
       </p>
-      <a href="https://www.linkedin.com/in/steven-motz-972a99215/" class="link"
-        >LinkedIn</a
-      >
+      <a href="https://www.linkedin.com/in/steven-motz-972a99215/" class="link">LinkedIn</a>
       <p></p>
       <b style="margin-left: 60px">Hunter</b>
       <p></p>
-      <a href="https://hunterhawkman.wixsite.com/hunterhockman" class="link"
-        >Portfolio</a
-      >
+      <a href="https://hunterhawkman.wixsite.com/hunterhockman" class="link">Portfolio</a>
       <p></p>
-      <a
-        href="https://www.linkedin.com/in/hunter-hockman-7559141b4/"
-        class="link"
-        >LinkedIn</a
+      <a href="https://www.linkedin.com/in/hunter-hockman-7559141b4/"class="link">LinkedIn</a
       >
       <p></p>
     </div>
