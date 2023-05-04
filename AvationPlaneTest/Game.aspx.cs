@@ -15,7 +15,6 @@ namespace AvationPlaneTest
     {
         private int intButtonSelected;
         private int intTotalQuestions = 3;
-        private int intCurrentQuestion;
         private int intCurrentQuestionCounter = 0;
         private int intCorrectButton;
         private int intnumCorrect =0;
@@ -35,7 +34,12 @@ namespace AvationPlaneTest
             ViewState["intButtonSelected"] = 0;
             ViewState["intPoints"] = 0;
             ViewState["intCurrentQuestionCounter"] = 0;
-            content2.Style.Add("display", "none");
+            ViewState["currentHotspot"] = 0;
+            ViewState["currentQuestion"] = 0;
+
+           //disables the second image map so that way only the first one is one the screen
+           content2.Style.Add("display", "none");
+
             setQuestions();
         }
 
@@ -88,7 +92,8 @@ namespace AvationPlaneTest
             if (ViewState["GameOver"] != null)
                 return;
             //lblQ.Text = ViewState["intButtonSelected"].ToString() + ViewState["intCorrectButton"];
-            if (ViewState["intButtonSelected"].ToString() == ViewState["intCorrectButton"].ToString())
+            if (ViewState["intButtonSelected"].ToString() == ViewState["intCorrectButton"].ToString() &&
+                ViewState["currentQuestion"].ToString() == ViewState["currentHotspot"].ToString())
             {
                 lblQ.Text = "you did the thing";
                 ViewState["intPoints"] = (int)ViewState["intPoints"] + 1;
@@ -113,29 +118,29 @@ namespace AvationPlaneTest
         }
 
 
-        //checks if the selected hotspot on the image map is the correct answer
+        //stores the postbackvalue of the hotspots
         protected void saveButtonPress(Object sender, ImageMapEventArgs e)
         {
-            ViewState["currentButton"] = e.PostBackValue;
-            lblConsole.Text = "works";
+            ViewState["currentHotspot"] = e.PostBackValue;
+            lblConsole.Text = "works"; 
         }
 
         //enables the overhead panel imagemap
         protected void changeToOverhead(object sender, ImageClickEventArgs e)
         {
-            content.Style.Add("display", "all");
-            content2.Style.Add("display", "none");
-            overheadButton.ImageUrl = "~/Images/ChoiceButtonOn.png";
-            secondOfficerButton.ImageUrl = "~/Images/ChoiceButtonOff.png";
+            content.Style.Add("display", "all");//enables overhead panel imagemap
+            content2.Style.Add("display", "none");//disables second officer imagemap
+            overheadButton.ImageUrl = "~/Images/ChoiceButtonOn.png";//sets button to active
+            secondOfficerButton.ImageUrl = "~/Images/ChoiceButtonOff.png";//sets button to inactive
         }
 
         //enables the second officer imagemap
         protected void changeToOfficer(object sender, ImageClickEventArgs e)
         {
-           content.Style.Add("display", "none");
-            content2.Style.Add("display", "all");
-            overheadButton.ImageUrl = "~/Images/ChoiceButtonOff.png";
-            secondOfficerButton.ImageUrl = "~/Images/ChoiceButtonOn.png";
+            content.Style.Add("display", "none");//disables overhead panel imagemap
+            content2.Style.Add("display", "all");//enables second officer imagemap
+            overheadButton.ImageUrl = "~/Images/ChoiceButtonOff.png";//sets button to inactive
+            secondOfficerButton.ImageUrl = "~/Images/ChoiceButtonOn.png";//sets button to active
         }
 
         private void setQuestions()
@@ -161,7 +166,9 @@ namespace AvationPlaneTest
             // string to object
             questions = System.Text.Json.JsonSerializer.Deserialize<List<Questions>>(json, options);
 
-            intCurrentQuestion = random.Next(6);
+            int intCurrentQuestion = random.Next(10);
+
+            ViewState["currentQuestion"] = intCurrentQuestion;
 
             lblQ.Text = questions[intCurrentQuestion].strQuestion;
 
