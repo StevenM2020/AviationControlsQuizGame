@@ -4,7 +4,7 @@
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
 
 <head>
-    <title>Receipt</title>
+    <title>Game</title>
     <style>
 
         /* Center the content on the page */

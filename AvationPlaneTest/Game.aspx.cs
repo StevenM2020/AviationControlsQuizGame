@@ -99,6 +99,9 @@ namespace AvationPlaneTest
                 ViewState["GameOver"] = "true";
 
                 // end game and show results here
+                Session["intCurrentQuestionCounter"] = ViewState["intCurrentQuestionCounter"];
+                Session["intPoints"] = ViewState["intPoints"];
+                Response.Redirect("Results.aspx");
 
                 lblConsole.Text = lblConsole.Text + " game over, " + ViewState["intPoints"].ToString() + " points";
             }

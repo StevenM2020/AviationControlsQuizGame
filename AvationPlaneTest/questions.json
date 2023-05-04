@@ -1,32 +1,52 @@
 [
   {
-    "strQuestion": "question0",
-    "strAnswer": "answer0",
+    "strQuestion": "Where is the Fire Test Switch on the Overhead Panel?",
+    "strAnswer": "This switch is used to test the fire detection and extinguishing systems of the aircraft. It is located on the left side of the overhead panel, next to the Engine Start switches.",
     "intControl": 0
   },
   {
-    "strQuestion": "question1",
-    "strAnswer": "answer1",
+    "strQuestion": "Where is the Hydraulic Power Spoiler Switch on the Overhead Panel?",
+    "strAnswer": "This switch is used to control the hydraulic power supply to the spoilers, which are panels on the wings that help reduce lift and increase drag. It is located on the right side of the overhead panel, next to the Fuel Pump switches.",
     "intControl": 1
   },
   {
-    "strQuestion": "question2",
-    "strAnswer": "answer2",
+    "strQuestion": "Where is the Windshield Wiper Switch on the Overhead Panel?",
+    "strAnswer": "This switch is used to operate the windshield wipers for each pilot. It has three positions: OFF, INT (intermittent) and ON. It is located on the center of the overhead panel, above the Flight Recorder switches.",
     "intControl": 2
   },
   {
-    "strQuestion": "question3",
-    "strAnswer": "answer3",
+    "strQuestion": " Where are the Pivot Knobs on the Overhead Panel?",
+    "strAnswer": "These knobs are used to adjust the angle of the five screens in front of the pilots. They allow the pilots to optimize their view of the displays. They are located on both sides of the overhead panel, above each pilot’s Primary Flight Display.",
     "intControl": 3
   },
   {
-    "strQuestion": "question4",
-    "strAnswer": "answer4",
+    "strQuestion": "Where are the Probe Heater Switches on the Overhead Panel?",
+    "strAnswer": "These switches are used to turn on or off the heating system for the probes that measure airspeed, altitude and angle of attack. They prevent ice formation on the probes that could affect their accuracy. They are located on the center of the overhead panel, below the Windshield Wiper switches.",
     "intControl": 4
   },
   {
-    "strQuestion": "question5",
-    "strAnswer": "answer5",
+    "strQuestion": "Where is the Cargo Heat Overflow switch on the Second Officer Panel?",
+    "strAnswer": "This switch is used to control the temperature of the cargo compartments. It has two positions: NORM and OVHT (overheat). It is located on the lower left corner of the second officer panel, next to the Cargo Heat switches.",
     "intControl": 5
+  },
+  {
+    "strQuestion": "Where is the AC Generator Drive Panel on the Second Officer Panel?",
+    "strAnswer": "This panel is used to monitor and control the AC electrical power generation from the engines and the APU (auxiliary power unit). It shows the voltage, frequency and load of each generator. It also has buttons to disconnect or reconnect them. It is located on the upper right corner of the second officer panel, next to the DC Power Metering panel.",
+    "intControl": 6
+  },
+  {
+    "strQuestion": "Where is the Gird Interconnect switch on the Second Officer Panel?",
+    "strAnswer": "This switch is used to connect or disconnect the AC electrical power from external sources, such as ground power or another aircraft. It has two positions: OPEN and CLOSED. It is located on the lower right corner of the second officer panel, below the AC Generator Drive panel.",
+    "intControl": 7
+  },
+  {
+    "strQuestion": "Where is the Service Interphone switch on the Second Officer Panel?",
+    "strAnswer": "This switch is used to communicate with ground personnel or other crew members outside the flight deck. It has two positions: OFF and ON. It is located on the lower right corner of the second officer panel, next to the Grid Interconnect switch.",
+    "intControl": 8
+  },
+  {
+    "strQuestion": "Where is the Battery switch on the Second Officer Panel?",
+    "strAnswer": "This switch is used to turn on or off the battery power for essential systems in case of a complete electrical failure. It has two positions: OFF and AUTO. It is located on the lower right corner of the second officer panel, next to the Service Interphone switch.",
+    "intControl": 9
   }
 ]
