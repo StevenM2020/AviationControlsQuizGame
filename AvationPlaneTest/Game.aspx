@@ -23,16 +23,7 @@
             height: 406px;
         }
 
-
-        /* Style the "Back to Store" button */
-        .btn {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-        }
+        /* Background style */
         #image {
             background-image: url(~/Background2.png);
             background-repeat: no-repeat;
@@ -52,25 +43,20 @@
             left: 175px;
             position: relative;
         }
-        #imageb {
-            margin: 0 auto;
-            padding: 100px;
-            height: 406px;
+        .textPanel {
+          width: 50%;
+          height: auto;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          padding: 20px;
         }
-.textPanel {
-  width: 50%;
-  height: auto;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 20px;
-}
-.textPanelQ {
-  width: 75%;
-  height: auto;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 20px;
-}
+        .textPanelQ {
+          width: 75%;
+          height: auto;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          padding: 20px;
+        }
 /* Set the text label properties */
 .textLabel {
   font-family: Arial;
@@ -105,8 +91,9 @@
     </style>
 </head>
 <body>
+    <%-- Background --%> 
     <asp:Panel ID="image" runat="server" Height="1080" BackImageUrl="~/Background2.png" CssClass="image">
-        
+        <%-- Image Map 1 --%> 
         <div id="content"  runat="server">
 
                 <asp:ImageMap 
@@ -166,6 +153,7 @@
             </asp:ImageMap>     
         </div> 
 
+        <%-- Image Map 2 --%> 
         <div id="content2"  runat="server">
             <asp:ImageMap 
                 ID="imageMapImage2" 
@@ -224,6 +212,7 @@
             </asp:ImageMap>     
         </div>
 
+        <%-- Image Map Controls --%> 
         <div class="bottomRight">
             <asp:imagebutton ID="overheadButton" runat="server" ImageUrl="~/Images/PanelButtonsRot.png" OnClick= "changeToOverhead"/>
         </div>
@@ -232,7 +221,10 @@
             <asp:imagebutton ID="secondOfficerButton" runat="server" ImageUrl="~/Images/PanelButtonsSep.png" OnClick= "changeToOfficer"/>
         </div>
 
+        <%-- Right Side --%> 
         <div class="right">
+
+            <%-- Question --%> 
         <div class="divA">
             <asp:Panel ID="pnlQ" runat="server" BackImageUrl="~/Images/PromptBox.png" CssClass="textPanelQ">
                 <asp:Label ID="lblQ" runat="server" CssClass="textLabel" Text=".askhajksdhkajhsdjkasdjkaksdhakjsdkajhsdklajhsdkahskahsdjkahksdjlhaksjldhajklsdh"></asp:Label>
@@ -241,7 +233,7 @@
         </div>
 
 
-         
+         <%-- Answers --%> 
         <div class="divA">
             <div class="divAbtn">
             <asp:Panel ID="pnlA1" runat="server" BackImageUrl="~/Images/PromptBox.png" CssClass="textPanel">
@@ -274,17 +266,18 @@
             <asp:imagebutton ID="imgbtnA4" runat="server" ImageUrl="~/Images/ChoiceButtonOff.png" OnClick="imgbtnA4_Click" />
         </div>
 
+            <%-- Submit --%> 
         <asp:imagebutton ID="imgbtnSubmit" runat="server" ImageUrl="~/Images/Submit.png" OnClick="imgbtnSubmit_Click" />
             </div>
 
-
+            <%-- Console 
         <div class="divA">
             <div class="divAbtn">
             <asp:Panel ID="pnlConsole" runat="server" BackImageUrl="~/Images/PromptBox.png" CssClass="textPanel">
                 <asp:Label ID="lblConsole" runat="server" CssClass="textLabel" Text="Console:"></asp:Label>
             </asp:Panel>
         </div>
-
+            --%> 
         </div>
             </div>
 

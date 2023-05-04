@@ -23,7 +23,6 @@ namespace AvationPlaneTest
         HtmlGenericControl contentDiv = new HtmlGenericControl();
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblConsole.Text = "Console:";
             if (ViewState["loaded"] != null)
             {
                 return;
@@ -110,8 +109,6 @@ namespace AvationPlaneTest
                 Session["intCurrentQuestionCounter"] = ViewState["intCurrentQuestionCounter"];
                 Session["intPoints"] = ViewState["intPoints"];
                 Response.Redirect("Results.aspx");
-
-                lblConsole.Text = lblConsole.Text + " game over, " + ViewState["intPoints"].ToString() + " points";
             }
             else
             {
